@@ -1,0 +1,50 @@
+{
+  "name": "bus-factor-check",
+  "version": "1.0.0",
+  "description": "Find knowledge concentration in a git repository: the folders and files where the recent changes come from one or two people. Reads the history with git log --numstat (a fixed list of arguments, no shell) or from a saved log, follows renames, maps aliases and leaves out bots, and reports for each file and folder the authors, the share of the top author, the fewest authors who hold a given share of the changed lines and the last change. Rules and thresholds come from the configuration only; --explain shows the numbers behind each finding. Email addresses are hidden by default. No dependencies.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "bus-factor-check": "bin/bus-factor-check.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "docs",
+    "examples",
+    "research",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "test:coverage": "node --test --experimental-test-coverage \"test/*.test.js\"",
+    "check": "node tools/check.mjs",
+    "example": "node tools/example.mjs"
+  },
+  "keywords": [
+    "bus-factor",
+    "truck-factor",
+    "knowledge-concentration",
+    "git",
+    "git-log",
+    "code-ownership",
+    "engineering-metrics",
+    "team",
+    "ci",
+    "cli"
+  ],
+  "author": "INNERLUXES <info@innerluxes.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INNERLUXES/bus-factor-check.git"
+  },
+  "homepage": "https://innerluxes.dev/software-development/dedicated-teams"
+}

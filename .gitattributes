@@ -1,0 +1,7 @@
+* text=auto eol=lf
+# The example log is kept byte for byte as git wrote it, so a test can compare it with a fresh run of git and read it
+# with LF and with CRLF line ends.
+examples/storefront/** -text
+examples/config.json -text
+# The example reports are kept as the tool writes them.
+examples/output/** -text
