@@ -1,0 +1,16 @@
+# Every change is reviewed by a maintainer.
+* @innerluxesdev
+
+# The run of git, the reader of its output, the configuration, the numbers, the rules and the saved pages decide every
+# finding and what may run; changes need extra care.
+/src/git.js @innerluxesdev
+/src/log.js @innerluxesdev
+/src/files.js @innerluxesdev
+/src/json.js @innerluxesdev
+/src/glob.js @innerluxesdev
+/src/config.js @innerluxesdev
+/src/metrics.js @innerluxesdev
+/src/rules.js @innerluxesdev
+/src/check.js @innerluxesdev
+/src/data.js @innerluxesdev
+/research/ @innerluxesdev
