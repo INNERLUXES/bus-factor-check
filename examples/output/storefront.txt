@@ -1,0 +1,58 @@
+bus-factor-check: examples/config.json (Example storefront)
+history: examples/storefront/history.log (saved git log, readable form); 26 commits read
+window: 120 days up to the newest commit; 23 commits counted, 1 older, 2 by excluded authors
+changes: 6 authors; 1,210 changed lines in 13 files and 8 folders to depth 2
+repository: top author Lena Ortiz with 29.91% of the changed lines; 2 authors are needed to cover 50% (Lena Ortiz and Omar Haddad)
+rules: concentration (error, folders, at least 30 changed lines); holders (warning, folders, at least 30 changed lines)
+findings: 5 (2 error, 3 warning); fail level error
+
+Findings (5)
+
+  ERROR    concentration  folder  services/billing
+           Lena Ortiz made 97.31% of 372 changed lines; 1 other author
+           last change 10 days before the newest commit
+
+  ERROR    concentration  folder  services/search
+           Omar Haddad made 100% of 272 changed lines; no other author
+           last change 20 days before the newest commit
+
+  WARNING  holders        folder  services/billing
+           1 author (Lena Ortiz) made 97.31% of 372 changed lines
+           last change 10 days before the newest commit
+
+  WARNING  holders        folder  services/search
+           1 author (Omar Haddad) made 100% of 272 changed lines
+           last change 20 days before the newest commit
+
+  WARNING  holders        folder  web/account
+           1 author (Ana Silva) made 60.43% of 91 changed lines
+           last change 65 days before the newest commit
+
+Folders (8)
+
+  FOLDER            LINES  AUTHORS  TOP AUTHOR   TOP SHARE  HOLDERS  LAST CHANGE
+  infra             7      1        Ravi Shah    100%       1        45 days
+  services          913    6        Lena Ortiz   39.64%     2        0 days
+  services/billing  372    2        Lena Ortiz   97.31%     1        10 days
+  services/catalog  269    3        Tomas Berg   47.58%     2        0 days
+  services/search   272    1        Omar Haddad  100%       1        20 days
+  web               283    4        Mia Chen     34.98%     2        5 days
+  web/account       91     2        Ana Silva    60.43%     1        65 days
+  web/checkout      192    4        Ravi Shah    43.75%     2        5 days
+
+Authors (6)
+
+  Lena Ortiz   362 lines  5 commits
+  Omar Haddad  272 lines  4 commits
+  Ana Silva    173 lines  3 commits
+  Tomas Berg   160 lines  4 commits
+  Mia Chen     142 lines  3 commits
+  Ravi Shah    101 lines  4 commits
+
+note: 1 commit of the log is older than the window and was not counted
+note: 2 commits by authors that authors.exclude names were not counted
+note: 2 file changes in 1 path that ignore names were not counted
+note: 1 change to binary files counts as a commit with no changed lines
+note: 2 renames were followed: older changes count on the newer path
+
+RESULT: FAIL - 2 findings at or above error

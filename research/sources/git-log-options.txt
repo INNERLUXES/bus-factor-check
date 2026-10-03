@@ -1,0 +1,117 @@
+Source: https://git-scm.com/docs/git-log
+
+git-log, the sections of the options and of the pretty formats that this tool relies on, as the page shows them.
+
+--use-mailmap
+
+Use mailmap file to map author and committer names and email
+addresses to canonical real names and email addresses. See
+git-shortlog[1].
+
+Commit Limiting
+
+Besides specifying a range of commits that should be listed using the
+special notations explained in the description, additional commit
+limiting may be applied.
+
+Using more options generally further limits the output (e.g.
+--since=<date1> limits to commits newer than <date1>, and using it
+with --grep=<pattern> further limits to commits whose log message
+has a line that matches <pattern>), unless otherwise noted.
+
+--since=<date>
+
+--after=<date>
+
+Show commits more recent than <date>.  As a special case,
+today means the last midnight.
+
+--since-as-filter=<date>
+
+Show all commits more recent than <date>. This visits
+all commits in the range, rather than stopping at the first commit which
+is older than <date>.
+
+--no-merges
+
+Do not print commits with more than one parent. This is
+exactly the same as --max-parents=1.
+
+Commit Formatting
+
+--format=<format>
+
+Pretty-print the contents of the commit logs in a given format,
+where <format> can be one of oneline, short, medium,
+full, fuller, reference, email, raw, format:<string>
+and tformat:<string>.  When <format> is none of the above,
+and has %<placeholder> in it, it acts as if
+--pretty=tformat:<format> were given.
+
+tformat:
+
+The tformat: format works exactly like format:, except that it
+provides "terminator" semantics instead of "separator" semantics. In
+other words, each commit has the message terminator character (usually a
+newline) appended, rather than a separator placed between entries.
+
+Placeholders that expand to a single literal character:
+
+%n
+
+newline
+
+%x00
+
+%x followed by two hexadecimal digits is replaced with a
+byte with the hexadecimal digits' value (we will call this
+"literal formatting code" in the rest of this document).
+
+Placeholders that expand to information extracted from the commit:
+
+%H
+
+commit hash
+
+%an
+
+author name
+
+%aN
+
+author name (respecting .mailmap, see git-shortlog[1]
+or git-blame[1])
+
+%ae
+
+author email
+
+%aE
+
+author email (respecting .mailmap, see git-shortlog[1]
+or git-blame[1])
+
+%ct
+
+committer date, UNIX timestamp
+
+Diff Formatting
+
+--numstat
+
+Similar to --stat, but shows number of added and
+deleted lines in decimal notation and pathname without
+abbreviation, to make it more machine friendly.  For
+binary files, outputs two - instead of saying
+0 0.
+
+-z
+
+Separate the commits with NULs instead of newlines.
+
+Also, when --raw or --numstat has been given, do not munge
+pathnames and use NULs as output field terminators.
+
+Without this option, pathnames with "unusual" characters are quoted as
+explained for the configuration variable core.quotePath (see
+git-config[1]).

@@ -1,0 +1,1158 @@
+{
+  "tool": "bus-factor-check",
+  "version": "1.0.0",
+  "config": {
+    "file": "examples/config.json",
+    "name": "Example storefront",
+    "windowDays": 120,
+    "folderDepth": 2,
+    "failOn": "error",
+    "ignore": [
+      "docs/**"
+    ],
+    "aliases": 1,
+    "excludedAuthorPatterns": 1,
+    "rules": [
+      {
+        "id": "concentration",
+        "level": "error",
+        "appliesTo": [
+          "folders"
+        ],
+        "minLines": 30,
+        "rule": "the top author made at least 80% of the changed lines and at most 1 other author changed the unit"
+      },
+      {
+        "id": "holders",
+        "level": "warning",
+        "appliesTo": [
+          "folders"
+        ],
+        "minLines": 30,
+        "rule": "at most 1 author is needed to cover 50% of the changed lines"
+      }
+    ]
+  },
+  "input": {
+    "kind": "log",
+    "path": "examples/storefront/history.log",
+    "form": "plain"
+  },
+  "window": {
+    "days": 120,
+    "commitsRead": 26,
+    "commitsCounted": 23,
+    "commitsOutside": 1,
+    "commitsExcluded": 2
+  },
+  "totals": {
+    "authors": 6,
+    "lines": 1210,
+    "files": 13,
+    "folders": 8
+  },
+  "repository": {
+    "lines": 1210,
+    "authors": 6,
+    "top": {
+      "author": "Lena Ortiz",
+      "lines": 362,
+      "share": "29.91%"
+    },
+    "holders": {
+      "count": 2,
+      "authors": [
+        "Lena Ortiz",
+        "Omar Haddad"
+      ],
+      "coverShare": "50%"
+    }
+  },
+  "authors": [
+    {
+      "author": "Lena Ortiz",
+      "lines": 362,
+      "commits": 5
+    },
+    {
+      "author": "Omar Haddad",
+      "lines": 272,
+      "commits": 4
+    },
+    {
+      "author": "Ana Silva",
+      "lines": 173,
+      "commits": 3
+    },
+    {
+      "author": "Tomas Berg",
+      "lines": 160,
+      "commits": 4
+    },
+    {
+      "author": "Mia Chen",
+      "lines": 142,
+      "commits": 3
+    },
+    {
+      "author": "Ravi Shah",
+      "lines": 101,
+      "commits": 4
+    }
+  ],
+  "findings": [
+    {
+      "rule": "concentration",
+      "level": "error",
+      "kind": "folder",
+      "path": "services/billing",
+      "ruleText": "the top author made at least 80% of the changed lines and at most 1 other author changed the unit",
+      "found": "Lena Ortiz made 97.31% of 372 changed lines; 1 other author",
+      "why": "97.31% is at least 80%, and 1 is at most 1",
+      "lines": 372,
+      "authors": 2,
+      "commits": 6,
+      "lastChangeDays": 10,
+      "byAuthor": [
+        {
+          "author": "Lena Ortiz",
+          "lines": 362,
+          "share": "97.31%",
+          "commits": 5,
+          "lastChangeDays": 10
+        },
+        {
+          "author": "Ravi Shah",
+          "lines": 10,
+          "share": "2.68%",
+          "commits": 1,
+          "lastChangeDays": 80
+        }
+      ],
+      "basis": [
+        {
+          "source": "avelino",
+          "section": "Abstract",
+          "text": "Truck Factor (TF) is a metric proposed by the agile community as a tool to identify concentration of knowledge in software development environments.",
+          "page": "https://arxiv.org/abs/1604.06766"
+        }
+      ]
+    },
+    {
+      "rule": "concentration",
+      "level": "error",
+      "kind": "folder",
+      "path": "services/search",
+      "ruleText": "the top author made at least 80% of the changed lines and at most 1 other author changed the unit",
+      "found": "Omar Haddad made 100% of 272 changed lines; no other author",
+      "why": "100% is at least 80%, and 0 is at most 1",
+      "lines": 272,
+      "authors": 1,
+      "commits": 4,
+      "lastChangeDays": 20,
+      "byAuthor": [
+        {
+          "author": "Omar Haddad",
+          "lines": 272,
+          "share": "100%",
+          "commits": 4,
+          "lastChangeDays": 20
+        }
+      ],
+      "basis": [
+        {
+          "source": "avelino",
+          "section": "Abstract",
+          "text": "Truck Factor (TF) is a metric proposed by the agile community as a tool to identify concentration of knowledge in software development environments.",
+          "page": "https://arxiv.org/abs/1604.06766"
+        }
+      ]
+    },
+    {
+      "rule": "holders",
+      "level": "warning",
+      "kind": "folder",
+      "path": "services/billing",
+      "ruleText": "at most 1 author is needed to cover 50% of the changed lines",
+      "found": "1 author (Lena Ortiz) made 97.31% of 372 changed lines",
+      "why": "1 author covers at least 50%, and 1 is at most 1",
+      "lines": 372,
+      "authors": 2,
+      "commits": 6,
+      "lastChangeDays": 10,
+      "byAuthor": [
+        {
+          "author": "Lena Ortiz",
+          "lines": 362,
+          "share": "97.31%",
+          "commits": 5,
+          "lastChangeDays": 10
+        },
+        {
+          "author": "Ravi Shah",
+          "lines": 10,
+          "share": "2.68%",
+          "commits": 1,
+          "lastChangeDays": 80
+        }
+      ],
+      "basis": [
+        {
+          "source": "avelino",
+          "section": "Abstract",
+          "text": "It states the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated.",
+          "page": "https://arxiv.org/abs/1604.06766"
+        },
+        {
+          "source": "avelino",
+          "section": "Abstract",
+          "text": "Altogether there is no consensus about how to calculate it, and no supporting evidence backing estimates for systems in the wild.",
+          "page": "https://arxiv.org/abs/1604.06766"
+        }
+      ]
+    },
+    {
+      "rule": "holders",
+      "level": "warning",
+      "kind": "folder",
+      "path": "services/search",
+      "ruleText": "at most 1 author is needed to cover 50% of the changed lines",
+      "found": "1 author (Omar Haddad) made 100% of 272 changed lines",
+      "why": "1 author covers at least 50%, and 1 is at most 1",
+      "lines": 272,
+      "authors": 1,
+      "commits": 4,
+      "lastChangeDays": 20,
+      "byAuthor": [
+        {
+          "author": "Omar Haddad",
+          "lines": 272,
+          "share": "100%",
+          "commits": 4,
+          "lastChangeDays": 20
+        }
+      ],
+      "basis": [
+        {
+          "source": "avelino",
+          "section": "Abstract",
+          "text": "It states the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated.",
+          "page": "https://arxiv.org/abs/1604.06766"
+        },
+        {
+          "source": "avelino",
+          "section": "Abstract",
+          "text": "Altogether there is no consensus about how to calculate it, and no supporting evidence backing estimates for systems in the wild.",
+          "page": "https://arxiv.org/abs/1604.06766"
+        }
+      ]
+    },
+    {
+      "rule": "holders",
+      "level": "warning",
+      "kind": "folder",
+      "path": "web/account",
+      "ruleText": "at most 1 author is needed to cover 50% of the changed lines",
+      "found": "1 author (Ana Silva) made 60.43% of 91 changed lines",
+      "why": "1 author covers at least 50%, and 1 is at most 1",
+      "lines": 91,
+      "authors": 2,
+      "commits": 2,
+      "lastChangeDays": 65,
+      "byAuthor": [
+        {
+          "author": "Ana Silva",
+          "lines": 55,
+          "share": "60.43%",
+          "commits": 1,
+          "lastChangeDays": 70
+        },
+        {
+          "author": "Mia Chen",
+          "lines": 36,
+          "share": "39.56%",
+          "commits": 1,
+          "lastChangeDays": 65
+        }
+      ],
+      "basis": [
+        {
+          "source": "avelino",
+          "section": "Abstract",
+          "text": "It states the minimal number of developers that have to be hit by a truck (or quit) before a project is incapacitated.",
+          "page": "https://arxiv.org/abs/1604.06766"
+        },
+        {
+          "source": "avelino",
+          "section": "Abstract",
+          "text": "Altogether there is no consensus about how to calculate it, and no supporting evidence backing estimates for systems in the wild.",
+          "page": "https://arxiv.org/abs/1604.06766"
+        }
+      ]
+    }
+  ],
+  "folders": [
+    {
+      "path": "infra",
+      "kind": "folder",
+      "lines": 7,
+      "added": 6,
+      "deleted": 1,
+      "commits": 1,
+      "binaryChanges": 1,
+      "authors": 1,
+      "top": {
+        "author": "Ravi Shah",
+        "lines": 7,
+        "share": "100%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Ravi Shah"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 45,
+      "byAuthor": [
+        {
+          "author": "Ravi Shah",
+          "lines": 7,
+          "share": "100%",
+          "commits": 1,
+          "lastChangeDays": 45
+        }
+      ]
+    },
+    {
+      "path": "services",
+      "kind": "folder",
+      "lines": 913,
+      "added": 826,
+      "deleted": 87,
+      "commits": 17,
+      "binaryChanges": 0,
+      "authors": 6,
+      "top": {
+        "author": "Lena Ortiz",
+        "lines": 362,
+        "share": "39.64%"
+      },
+      "holders": {
+        "count": 2,
+        "authors": [
+          "Lena Ortiz",
+          "Omar Haddad"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 0,
+      "byAuthor": [
+        {
+          "author": "Lena Ortiz",
+          "lines": 362,
+          "share": "39.64%",
+          "commits": 5,
+          "lastChangeDays": 10
+        },
+        {
+          "author": "Omar Haddad",
+          "lines": 272,
+          "share": "29.79%",
+          "commits": 4,
+          "lastChangeDays": 20
+        },
+        {
+          "author": "Tomas Berg",
+          "lines": 128,
+          "share": "14.01%",
+          "commits": 4,
+          "lastChangeDays": 0
+        },
+        {
+          "author": "Ana Silva",
+          "lines": 103,
+          "share": "11.28%",
+          "commits": 2,
+          "lastChangeDays": 35
+        },
+        {
+          "author": "Mia Chen",
+          "lines": 38,
+          "share": "4.16%",
+          "commits": 1,
+          "lastChangeDays": 95
+        },
+        {
+          "author": "Ravi Shah",
+          "lines": 10,
+          "share": "1.09%",
+          "commits": 1,
+          "lastChangeDays": 80
+        }
+      ]
+    },
+    {
+      "path": "services/billing",
+      "kind": "folder",
+      "lines": 372,
+      "added": 336,
+      "deleted": 36,
+      "commits": 6,
+      "binaryChanges": 0,
+      "authors": 2,
+      "top": {
+        "author": "Lena Ortiz",
+        "lines": 362,
+        "share": "97.31%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Lena Ortiz"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 10,
+      "byAuthor": [
+        {
+          "author": "Lena Ortiz",
+          "lines": 362,
+          "share": "97.31%",
+          "commits": 5,
+          "lastChangeDays": 10
+        },
+        {
+          "author": "Ravi Shah",
+          "lines": 10,
+          "share": "2.68%",
+          "commits": 1,
+          "lastChangeDays": 80
+        }
+      ]
+    },
+    {
+      "path": "services/catalog",
+      "kind": "folder",
+      "lines": 269,
+      "added": 241,
+      "deleted": 28,
+      "commits": 7,
+      "binaryChanges": 0,
+      "authors": 3,
+      "top": {
+        "author": "Tomas Berg",
+        "lines": 128,
+        "share": "47.58%"
+      },
+      "holders": {
+        "count": 2,
+        "authors": [
+          "Tomas Berg",
+          "Ana Silva"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 0,
+      "byAuthor": [
+        {
+          "author": "Tomas Berg",
+          "lines": 128,
+          "share": "47.58%",
+          "commits": 4,
+          "lastChangeDays": 0
+        },
+        {
+          "author": "Ana Silva",
+          "lines": 103,
+          "share": "38.28%",
+          "commits": 2,
+          "lastChangeDays": 35
+        },
+        {
+          "author": "Mia Chen",
+          "lines": 38,
+          "share": "14.12%",
+          "commits": 1,
+          "lastChangeDays": 95
+        }
+      ]
+    },
+    {
+      "path": "services/search",
+      "kind": "folder",
+      "lines": 272,
+      "added": 249,
+      "deleted": 23,
+      "commits": 4,
+      "binaryChanges": 0,
+      "authors": 1,
+      "top": {
+        "author": "Omar Haddad",
+        "lines": 272,
+        "share": "100%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Omar Haddad"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 20,
+      "byAuthor": [
+        {
+          "author": "Omar Haddad",
+          "lines": 272,
+          "share": "100%",
+          "commits": 4,
+          "lastChangeDays": 20
+        }
+      ]
+    },
+    {
+      "path": "web",
+      "kind": "folder",
+      "lines": 283,
+      "added": 263,
+      "deleted": 20,
+      "commits": 8,
+      "binaryChanges": 0,
+      "authors": 4,
+      "top": {
+        "author": "Mia Chen",
+        "lines": 99,
+        "share": "34.98%"
+      },
+      "holders": {
+        "count": 2,
+        "authors": [
+          "Mia Chen",
+          "Ravi Shah"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 5,
+      "byAuthor": [
+        {
+          "author": "Mia Chen",
+          "lines": 99,
+          "share": "34.98%",
+          "commits": 3,
+          "lastChangeDays": 30
+        },
+        {
+          "author": "Ravi Shah",
+          "lines": 84,
+          "share": "29.68%",
+          "commits": 2,
+          "lastChangeDays": 5
+        },
+        {
+          "author": "Ana Silva",
+          "lines": 70,
+          "share": "24.73%",
+          "commits": 2,
+          "lastChangeDays": 35
+        },
+        {
+          "author": "Tomas Berg",
+          "lines": 30,
+          "share": "10.6%",
+          "commits": 1,
+          "lastChangeDays": 90
+        }
+      ]
+    },
+    {
+      "path": "web/account",
+      "kind": "folder",
+      "lines": 91,
+      "added": 85,
+      "deleted": 6,
+      "commits": 2,
+      "binaryChanges": 0,
+      "authors": 2,
+      "top": {
+        "author": "Ana Silva",
+        "lines": 55,
+        "share": "60.43%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Ana Silva"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 65,
+      "byAuthor": [
+        {
+          "author": "Ana Silva",
+          "lines": 55,
+          "share": "60.43%",
+          "commits": 1,
+          "lastChangeDays": 70
+        },
+        {
+          "author": "Mia Chen",
+          "lines": 36,
+          "share": "39.56%",
+          "commits": 1,
+          "lastChangeDays": 65
+        }
+      ]
+    },
+    {
+      "path": "web/checkout",
+      "kind": "folder",
+      "lines": 192,
+      "added": 178,
+      "deleted": 14,
+      "commits": 6,
+      "binaryChanges": 0,
+      "authors": 4,
+      "top": {
+        "author": "Ravi Shah",
+        "lines": 84,
+        "share": "43.75%"
+      },
+      "holders": {
+        "count": 2,
+        "authors": [
+          "Ravi Shah",
+          "Mia Chen"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 5,
+      "byAuthor": [
+        {
+          "author": "Ravi Shah",
+          "lines": 84,
+          "share": "43.75%",
+          "commits": 2,
+          "lastChangeDays": 5
+        },
+        {
+          "author": "Mia Chen",
+          "lines": 63,
+          "share": "32.81%",
+          "commits": 2,
+          "lastChangeDays": 30
+        },
+        {
+          "author": "Tomas Berg",
+          "lines": 30,
+          "share": "15.62%",
+          "commits": 1,
+          "lastChangeDays": 90
+        },
+        {
+          "author": "Ana Silva",
+          "lines": 15,
+          "share": "7.81%",
+          "commits": 1,
+          "lastChangeDays": 35
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "kind": "file",
+      "lines": 7,
+      "added": 6,
+      "deleted": 1,
+      "commits": 2,
+      "binaryChanges": 0,
+      "authors": 2,
+      "top": {
+        "author": "Mia Chen",
+        "lines": 5,
+        "share": "71.42%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Mia Chen"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 0,
+      "byAuthor": [
+        {
+          "author": "Mia Chen",
+          "lines": 5,
+          "share": "71.42%",
+          "commits": 1,
+          "lastChangeDays": 30
+        },
+        {
+          "author": "Tomas Berg",
+          "lines": 2,
+          "share": "28.57%",
+          "commits": 1,
+          "lastChangeDays": 0
+        }
+      ]
+    },
+    {
+      "path": "infra/deploy.yml",
+      "kind": "file",
+      "lines": 7,
+      "added": 6,
+      "deleted": 1,
+      "commits": 1,
+      "binaryChanges": 0,
+      "authors": 1,
+      "top": {
+        "author": "Ravi Shah",
+        "lines": 7,
+        "share": "100%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Ravi Shah"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 45,
+      "byAuthor": [
+        {
+          "author": "Ravi Shah",
+          "lines": 7,
+          "share": "100%",
+          "commits": 1,
+          "lastChangeDays": 45
+        }
+      ]
+    },
+    {
+      "path": "infra/logo.png",
+      "kind": "file",
+      "lines": 0,
+      "added": 0,
+      "deleted": 0,
+      "commits": 1,
+      "binaryChanges": 1,
+      "authors": 1,
+      "top": null,
+      "holders": null,
+      "lastChangeDays": 45,
+      "byAuthor": [
+        {
+          "author": "Ravi Shah",
+          "lines": 0,
+          "share": "n/a",
+          "commits": 1,
+          "lastChangeDays": 45
+        }
+      ]
+    },
+    {
+      "path": "services/billing/invoice.js",
+      "kind": "file",
+      "lines": 232,
+      "added": 210,
+      "deleted": 22,
+      "commits": 3,
+      "binaryChanges": 0,
+      "authors": 1,
+      "top": {
+        "author": "Lena Ortiz",
+        "lines": 232,
+        "share": "100%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Lena Ortiz"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 40,
+      "byAuthor": [
+        {
+          "author": "Lena Ortiz",
+          "lines": 232,
+          "share": "100%",
+          "commits": 3,
+          "lastChangeDays": 40
+        }
+      ]
+    },
+    {
+      "path": "services/billing/money.js",
+      "kind": "file",
+      "lines": 34,
+      "added": 28,
+      "deleted": 6,
+      "commits": 3,
+      "binaryChanges": 0,
+      "authors": 1,
+      "top": {
+        "author": "Lena Ortiz",
+        "lines": 34,
+        "share": "100%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Lena Ortiz"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 10,
+      "byAuthor": [
+        {
+          "author": "Lena Ortiz",
+          "lines": 34,
+          "share": "100%",
+          "commits": 3,
+          "lastChangeDays": 10
+        }
+      ]
+    },
+    {
+      "path": "services/billing/tax.js",
+      "kind": "file",
+      "lines": 106,
+      "added": 98,
+      "deleted": 8,
+      "commits": 3,
+      "binaryChanges": 0,
+      "authors": 2,
+      "top": {
+        "author": "Lena Ortiz",
+        "lines": 96,
+        "share": "90.56%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Lena Ortiz"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 75,
+      "byAuthor": [
+        {
+          "author": "Lena Ortiz",
+          "lines": 96,
+          "share": "90.56%",
+          "commits": 2,
+          "lastChangeDays": 75
+        },
+        {
+          "author": "Ravi Shah",
+          "lines": 10,
+          "share": "9.43%",
+          "commits": 1,
+          "lastChangeDays": 80
+        }
+      ]
+    },
+    {
+      "path": "services/catalog/prices.js",
+      "kind": "file",
+      "lines": 117,
+      "added": 104,
+      "deleted": 13,
+      "commits": 4,
+      "binaryChanges": 0,
+      "authors": 3,
+      "top": {
+        "author": "Ana Silva",
+        "lines": 50,
+        "share": "42.73%"
+      },
+      "holders": {
+        "count": 2,
+        "authors": [
+          "Ana Silva",
+          "Mia Chen"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 0,
+      "byAuthor": [
+        {
+          "author": "Ana Silva",
+          "lines": 50,
+          "share": "42.73%",
+          "commits": 1,
+          "lastChangeDays": 112
+        },
+        {
+          "author": "Mia Chen",
+          "lines": 38,
+          "share": "32.47%",
+          "commits": 1,
+          "lastChangeDays": 95
+        },
+        {
+          "author": "Tomas Berg",
+          "lines": 29,
+          "share": "24.78%",
+          "commits": 2,
+          "lastChangeDays": 0
+        }
+      ]
+    },
+    {
+      "path": "services/catalog/products.js",
+      "kind": "file",
+      "lines": 152,
+      "added": 137,
+      "deleted": 15,
+      "commits": 4,
+      "binaryChanges": 0,
+      "authors": 2,
+      "top": {
+        "author": "Tomas Berg",
+        "lines": 99,
+        "share": "65.13%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Tomas Berg"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 35,
+      "byAuthor": [
+        {
+          "author": "Tomas Berg",
+          "lines": 99,
+          "share": "65.13%",
+          "commits": 2,
+          "lastChangeDays": 90
+        },
+        {
+          "author": "Ana Silva",
+          "lines": 53,
+          "share": "34.86%",
+          "commits": 2,
+          "lastChangeDays": 35
+        }
+      ]
+    },
+    {
+      "path": "services/search/indexer.js",
+      "kind": "file",
+      "lines": 140,
+      "added": 130,
+      "deleted": 10,
+      "commits": 3,
+      "binaryChanges": 0,
+      "authors": 1,
+      "top": {
+        "author": "Omar Haddad",
+        "lines": 140,
+        "share": "100%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Omar Haddad"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 20,
+      "byAuthor": [
+        {
+          "author": "Omar Haddad",
+          "lines": 140,
+          "share": "100%",
+          "commits": 3,
+          "lastChangeDays": 20
+        }
+      ]
+    },
+    {
+      "path": "services/search/query.js",
+      "kind": "file",
+      "lines": 132,
+      "added": 119,
+      "deleted": 13,
+      "commits": 3,
+      "binaryChanges": 0,
+      "authors": 1,
+      "top": {
+        "author": "Omar Haddad",
+        "lines": 132,
+        "share": "100%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Omar Haddad"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 20,
+      "byAuthor": [
+        {
+          "author": "Omar Haddad",
+          "lines": 132,
+          "share": "100%",
+          "commits": 3,
+          "lastChangeDays": 20
+        }
+      ]
+    },
+    {
+      "path": "web/account/profile.js",
+      "kind": "file",
+      "lines": 91,
+      "added": 85,
+      "deleted": 6,
+      "commits": 2,
+      "binaryChanges": 0,
+      "authors": 2,
+      "top": {
+        "author": "Ana Silva",
+        "lines": 55,
+        "share": "60.43%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Ana Silva"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 65,
+      "byAuthor": [
+        {
+          "author": "Ana Silva",
+          "lines": 55,
+          "share": "60.43%",
+          "commits": 1,
+          "lastChangeDays": 70
+        },
+        {
+          "author": "Mia Chen",
+          "lines": 36,
+          "share": "39.56%",
+          "commits": 1,
+          "lastChangeDays": 65
+        }
+      ]
+    },
+    {
+      "path": "web/checkout/cart.js",
+      "kind": "file",
+      "lines": 108,
+      "added": 101,
+      "deleted": 7,
+      "commits": 3,
+      "binaryChanges": 0,
+      "authors": 3,
+      "top": {
+        "author": "Ravi Shah",
+        "lines": 60,
+        "share": "55.55%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Ravi Shah"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 30,
+      "byAuthor": [
+        {
+          "author": "Ravi Shah",
+          "lines": 60,
+          "share": "55.55%",
+          "commits": 1,
+          "lastChangeDays": 105
+        },
+        {
+          "author": "Tomas Berg",
+          "lines": 30,
+          "share": "27.77%",
+          "commits": 1,
+          "lastChangeDays": 90
+        },
+        {
+          "author": "Mia Chen",
+          "lines": 18,
+          "share": "16.66%",
+          "commits": 1,
+          "lastChangeDays": 30
+        }
+      ]
+    },
+    {
+      "path": "web/checkout/payment.js",
+      "kind": "file",
+      "lines": 84,
+      "added": 77,
+      "deleted": 7,
+      "commits": 3,
+      "binaryChanges": 0,
+      "authors": 3,
+      "top": {
+        "author": "Mia Chen",
+        "lines": 45,
+        "share": "53.57%"
+      },
+      "holders": {
+        "count": 1,
+        "authors": [
+          "Mia Chen"
+        ],
+        "coverShare": "50%"
+      },
+      "lastChangeDays": 5,
+      "byAuthor": [
+        {
+          "author": "Mia Chen",
+          "lines": 45,
+          "share": "53.57%",
+          "commits": 1,
+          "lastChangeDays": 95
+        },
+        {
+          "author": "Ravi Shah",
+          "lines": 24,
+          "share": "28.57%",
+          "commits": 1,
+          "lastChangeDays": 5
+        },
+        {
+          "author": "Ana Silva",
+          "lines": 15,
+          "share": "17.85%",
+          "commits": 1,
+          "lastChangeDays": 35
+        }
+      ]
+    }
+  ],
+  "verdict": {
+    "failOn": "error",
+    "pass": false,
+    "failing": 2,
+    "byLevel": {
+      "notice": 0,
+      "warning": 3,
+      "error": 2
+    },
+    "text": "FAIL - 2 findings at or above error"
+  },
+  "notes": [
+    "1 commit of the log is older than the window and was not counted",
+    "2 commits by authors that authors.exclude names were not counted",
+    "2 file changes in 1 path that ignore names were not counted",
+    "1 change to binary files counts as a commit with no changed lines",
+    "2 renames were followed: older changes count on the newer path"
+  ]
+}

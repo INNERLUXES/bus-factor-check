@@ -1,0 +1,17 @@
+{
+  "name": "Example storefront",
+  "window": { "days": 120 },
+  "folders": { "depth": 2 },
+  "authors": {
+    "aliases": [
+      { "name": "Lena Ortiz", "emails": ["lena@example.com", "lena.ortiz@old.example.com"] }
+    ],
+    "exclude": ["*-bot@example.com"]
+  },
+  "ignore": ["docs/**"],
+  "rules": {
+    "concentration": { "minTopShare": 80, "maxOtherAuthors": 1, "minLines": 30, "level": "error", "appliesTo": ["folders"] },
+    "holders": { "coverShare": 50, "maxHolders": 1, "minLines": 30, "level": "warning", "appliesTo": ["folders"] }
+  },
+  "failOn": "error"
+}

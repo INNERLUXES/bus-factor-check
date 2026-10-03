@@ -1,0 +1,145 @@
+commit 0788a062810db1b308e275e4b0c178dfa070684f 1011232000
+email tomas@example.com
+name Tomas Berg
+
+2	0	README.md
+6	2	services/catalog/prices.js
+commit 82a1277a0119937e59a3a7f3feb8642fbb9e4b30 1010800000
+email ravi@example.com
+name Ravi Shah
+
+5	1	docs/guide.md
+20	4	web/checkout/payment.js
+commit 7a128d19c26c6878bd9eca23f6b6d5576d96ec25 1010368000
+email lena@example.com
+name Lena Ortiz
+
+12	3	services/billing/money.js
+commit d7d6ff5293fef73cf21f764cbef3f70242c4039a 1009504000
+email omar@example.com
+name Omar Haddad
+
+28	6	services/search/indexer.js
+14	3	services/search/query.js
+commit a0414f2af4134b5bd86e2c139fce8e4bf8559aa9 1008640000
+email mia@example.com
+name Mia Chen
+
+4	1	README.md
+16	2	web/checkout/cart.js
+commit 53ff8967f450a5dabca6b8041080cfc9fa606779 1008208000
+email ana@example.com
+name Ana Silva
+
+22	6	services/catalog/products.js
+12	3	web/checkout/payment.js
+commit 9d8c9953ed7b51275efd94a7139375b3647018d6 1007776000
+email lena@example.com
+name Lena Ortiz
+
+50	12	services/billing/invoice.js
+commit 4ad6cd89f64bf1e1ce50a999af884f27c11a1503 1007344000
+email ravi@example.com
+name Ravi Shah
+
+6	1	infra/deploy.yml
+-	-	infra/logo.png
+commit 0efb50eb2b54c0e4229377e4b907dd883278e77d 1006912000
+email build-bot@example.com
+name build-bot
+
+4	2	infra/deploy.yml
+commit 9714ecf91e4747268e7a50a788fbfa7a745d1631 1006480000
+email tomas@example.com
+name Tomas Berg
+
+18	3	services/catalog/prices.js
+commit a0c05a759d6ed3e2c027d6ecf3e79d848015a5d1 1006048000
+email omar@example.com
+name Omar Haddad
+
+12	4	services/search/{index-builder.js => indexer.js}
+commit a714a685b6bcf24b1364a7e5100f7aa51df5140a 1005616000
+email mia@example.com
+name Mia Chen
+
+30	6	web/account/profile.js
+commit 58d3a3cbc36b4f1c6e76d9ede1694d54299e7800 1005184000
+email ana@example.com
+name Ana Silva
+
+40	0	docs/guide.md
+55	0	web/account/profile.js
+commit 57eab1c633b7e1668d9722747450ba64766ed8ad 1004752000
+email lena@example.com
+name Lena Ortiz
+
+6	1	{lib => services/billing}/money.js
+30	6	services/billing/tax.js
+commit c03983aefdb62391469ed0b3415e951c9140934f 1004320000
+email ravi@example.com
+name Ravi Shah
+
+8	2	services/billing/tax.js
+commit 601775470488eb1e4ffd649f773f1f0c870a5c2d 1003888000
+email omar@example.com
+name Omar Haddad
+
+35	10	services/search/query.js
+commit 13f2871b3ba1bb537100c13d62a79ee2bbfa7abb 1003456000
+email tomas@example.com
+name Tomas Berg
+
+15	4	services/catalog/products.js
+25	5	web/checkout/cart.js
+commit 99ffd85dc39392c986ac16094bd3e8f90d114683 1003024000
+email mia@example.com
+name Mia Chen
+
+30	8	services/catalog/prices.js
+45	0	web/checkout/payment.js
+commit 4fc714e199193a6990e5898ea1c7c64476bad7fd 1002592000
+email lena@example.com
+name Lena Ortiz
+
+10	2	lib/money.js
+40	10	services/billing/invoice.js
+commit afbf2f55b446fc154309d2632d116a5a4208059c 1002419200
+email build-bot@example.com
+name build-bot
+
+30	0	infra/deploy.yml
+commit 8f12c4a2d912cfc5385be0c9f5cb37262030c732 1002160000
+email ravi@example.com
+name Ravi Shah
+
+60	0	web/checkout/cart.js
+commit f32e0ea62433adc32280dc55febc7e93e70f54ad 1001728000
+email omar@example.com
+name Omar Haddad
+
+90	0	services/search/index-builder.js
+70	0	services/search/query.js
+commit 65b1ad95c88f375a062362bfda0bc81307e47880 1001555200
+email ana@example.com
+name Ana Silva
+
+50	0	services/catalog/prices.js
+20	5	services/catalog/products.js
+commit 6f78f4565e7858ac46d3aff58f6759d5e1624628 1001296000
+email tomas@example.com
+name Tomas Berg
+
+80	0	services/catalog/products.js
+commit a8b07c1efb886013c30ea221de0ded5dd666335c 1001036800
+email lena.ortiz@old.example.com
+name L. Ortiz
+
+120	0	services/billing/invoice.js
+60	0	services/billing/tax.js
+commit 7b0c7c7798d616e0d8a408ced6044c2c858bd7b5 1000172800
+email mia@example.com
+name Mia Chen
+
+12	0	README.md
+40	0	lib/money.js
